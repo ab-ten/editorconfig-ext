@@ -1,0 +1,30 @@
+# Makefile.local.sample - ローカル環境設定のサンプルファイル
+#
+# このファイルは Makefile.local としてコピーしてから各開発者の環境に応じてカスタマイズしてください。
+# 設定例を以下に示します。
+
+# Emacsのパス（カスタムビルドや特定バージョンを使用する場合）
+# EMACS = /usr/local/bin/emacs
+# EMACS = emacs-30.1
+# EMACS = "C:/Program Files/Emacs/emacs-30.1/bin/emacs.exe"
+
+# バッチオプションのカスタマイズ
+# BATCH_OPTS = --batch --no-init-file --no-site-file --debug-init
+
+# 開発用設定例（詳細ログ出力）
+# BATCH_OPTS = --batch --no-init-file --no-site-file --eval "(setq debug-on-error t)"
+
+# テスト用の一時ディレクトリ（デフォルトは /tmp/editorconfig-ext-test*）
+# TEST_TEMP_DIR = /custom/temp/dir
+
+# 例: Ubuntu/Debian環境での設定
+# EMACS = emacs
+
+# 例: Windows環境での設定
+# EMACS = "C:/Program Files/Emacs/emacs-30.1/bin/emacs.exe"
+
+# 例: macOS Homebrew環境での設定
+# EMACS = /opt/homebrew/bin/emacs
+
+# 例: カスタムEmacs build環境での設定
+# EMACS = /usr/local/src/emacs/src/emacs
