@@ -75,6 +75,80 @@ C-x C-v RET
 ### 推奨される使用方法
 - .editorconfig の変更後は該当ファイルを一度閉じて再度開く
 
+## テスト
+
+このパッケージには ERT (Emacs Regression Testing) を使用したユニットテストが含まれています。
+
+### テスト実行方法
+
+#### 環境設定
+
+テスト実行前に、まず環境に応じた設定を行います：
+
+```bash
+# サンプル設定ファイルをコピー
+cp Makefile.local.sample Makefile.local
+
+# Makefile.local を編集して環境に合わせて設定
+# 例：
+# EMACS = emacs-30.1
+```
+
+**Makefile.local の主な設定項目：**
+- `EMACS`: 使用するEmacsのパス
+- `BATCH_OPTS`: Emacsバッチモードのオプション
+
+#### 環境確認
+
+設定後、環境が正しく設定されているか確認：
+
+```bash
+# 設定内容の確認
+make debug-config
+
+# 環境テスト（Emacsの動作確認）
+make test-env
+```
+
+#### 基本的なテスト実行
+
+```bash
+# バッチモードでテスト実行
+make test
+```
+
+#### インタラクティブモードでのテスト実行
+
+```bash
+# インタラクティブモードでテスト実行
+make test-interactive
+```
+
+#### その他のテストオプション
+
+```bash
+# 詳細出力付きテスト
+make test-verbose
+
+# バイトコンパイル
+make byte-compile
+
+# クリーンアップ
+make clean
+```
+
+### テスト内容
+
+現在のテストスイートには以下のテストが含まれています：
+
+- **状態検出テスト**: EditorConfig の適用状態の正確な検出
+- **モードライン表示テスト**: 状態に応じた適切な表示文字列の生成
+- **色付き表示テスト**: カスタム色設定の動作確認
+- **追跡機能テスト**: EditorConfig プロパティ適用の追跡
+- **マイナーモードテスト**: モードの有効化・無効化
+- **設定テスト**: カスタム記号・色の設定
+- **統合テスト**: 実際の .editorconfig ファイルとの連携
+
 ## ライセンス
 
 このプロジェクトは GNU General Public License v3.0 (GPLv3) の下でライセンスされています。
