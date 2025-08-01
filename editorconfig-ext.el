@@ -241,8 +241,6 @@ and EditorConfig configurations."
           (princ (format "  Config File: %s\n" (or editorconfig-ext-config-found "None")))
           (princ (format "  Properties Applied: %s\n" (or editorconfig-ext-applied "None"))))))))
 
-;; Legacy hook registration for compatibility
-(add-hook 'editorconfig-after-apply-functions
-          #'editorconfig-ext-track-application)
-
 (provide 'editorconfig-ext)
+
+;;; editorconfig-ext.el ends here
